@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Misfits Softball</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Inter;
+background:linear-gradient(135deg,#000,#001a07,#00ff6a);
+color:white;
+}
+
+header{
+text-align:center;
+padding:60px;
+background:black;
+}
+
+header h1{
+font-family:Orbitron;
+font-size:60px;
+color:#00ff6a;
+text-shadow:0 0 20px #00ff6a;
+}
+
+nav{
+display:flex;
+justify-content:center;
+gap:30px;
+background:#000;
+padding:15px;
+}
+
+nav a{
+color:#00ff6a;
+text-decoration:none;
+font-weight:600;
+}
+
+section{
+padding:60px 10%;
+}
+
+h2{
+font-family:Orbitron;
+color:#00ff6a;
+margin-bottom:30px;
+}
+
+.card-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:rgba(0,0,0,.8);
+padding:20px;
+border-radius:15px;
+box-shadow:0 0 15px #00ff6a44;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px #00ff6a;
+}
+
+.player-img{
+width:100%;
+border-radius:10px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th{
+background:#00ff6a;
+color:black;
+padding:10px;
+}
+
+td{
+padding:10px;
+border-bottom:1px solid #00ff6a;
+text-align:center;
+}
+
+.blog{
+display:grid;
+gap:25px;
+}
+
+.blog-post{
+background:black;
+padding:25px;
+border-radius:10px;
+}
+
+.scoreboard{
+display:flex;
+justify-content:center;
+gap:40px;
+font-size:40px;
+font-family:Orbitron;
+}
+
+.team{
+text-align:center;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+}
+
+.instagram{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:10px;
+}
+
+.instagram img{
+width:100%;
+border-radius:10px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:black;
+color:#00ff6a;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>MISFITS SOFTBALL</h1>
+<p>Play Hard • Stay Weird</p>
+</header>
+
+<nav>
+<a href="#scoreboard">Scoreboard</a>
+<a href="#roster">Roster</a>
+<a href="#leaders">Leaderboards</a>
+<a href="#schedule">Schedule</a>
+<a href="#recaps">Game Recaps</a>
+<a href="#photos">Photos</a>
+<a href="#instagram">Instagram</a>
+</nav>
+
+
+<section id="scoreboard">
+
+<h2>Live Scoreboard</h2>
+
+<div class="scoreboard">
+
+<div class="team">
+<p>Misfits</p>
+<div id="score1">0</div>
+</div>
+
+<div class="team">
+<p>Opponent</p>
+<div id="score2">0</div>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="roster">
+
+<h2>Team Roster</h2>
+
+<div class="card-grid">
+
+<div class="card">
+<img class="player-img" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
+<h3>Brandon</h3>
+<p>Position: SS</p>
+<p>#7</p>
+</div>
+
+<div class="card">
+<img class="player-img" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2">
+<h3>Sarah</h3>
+<p>Position: CF</p>
+<p>#12</p>
+</div>
+
+<div class="card">
+<img class="player-img" src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126">
+<h3>Mike</h3>
+<p>Position: 1B</p>
+<p>#23</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="leaders">
+
+<h2>Leaderboards</h2>
+
+<table>
+
+<tr>
+<th>Category</th>
+<th>Leader</th>
+<th>Stat</th>
+</tr>
+
+<tr>
+<td>Batting Average</td>
+<td>Brandon</td>
+<td>.452</td>
+</tr>
+
+<tr>
+<td>Home Runs</td>
+<td>Mike</td>
+<td>6</td>
+</tr>
+
+<tr>
+<td>RBIs</td>
+<td>Sarah</td>
+<td>19</td>
+</tr>
+
+<tr>
+<td>Runs</td>
+<td>Brandon</td>
+<td>21</td>
+</tr>
+
+</table>
+
+</section>
+
+
+<section id="schedule">
+
+<h2>Game Schedule</h2>
+
+<div class="card-grid">
+
+<div class="card">
+<h3>May 5</h3>
+<p>Misfits vs Sandlot Kings</p>
+<p>7:00 PM</p>
+</div>
+
+<div class="card">
+<h3>May 12</h3>
+<p>Misfits vs Diamond Dogs</p>
+<p>8:15 PM</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="recaps">
+
+<h2>Game Recaps</h2>
+
+<div class="blog">
+
+<div class="blog-post">
+<h3>Misfits win season opener</h3>
+<p>The Misfits exploded for 10 runs in the 4th inning to win 14-6. Brandon led the way going 3-4 with a homer.</p>
+</div>
+
+<div class="blog-post">
+<h3>Walk-off thriller</h3>
+<p>Sarah hit a walk-off double to give the Misfits a 9-8 victory.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="photos">
+
+<h2>Team Photos</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1593341646782-e0b495cff86d">
+<img src="https://images.unsplash.com/photo-1505842465776-3bfd18890ff0">
+<img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12">
+
+</div>
+
+</section>
+
+
+<section id="instagram">
+
+<h2>Instagram</h2>
+
+<div class="instagram">
+
+<img src="https://images.unsplash.com/photo-1593341646782-e0b495cff86d">
+<img src="https://images.unsplash.com/photo-1505842465776-3bfd18890ff0">
+<img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12">
+<img src="https://images.unsplash.com/photo-1546519638-68e109498ffc">
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 Misfits Softball</p>
+
+</footer>
+
+<script>
+
+let score1=0
+let score2=0
+
+setInterval(()=>{
+score1+=Math.floor(Math.random()*2)
+score2+=Math.floor(Math.random()*2)
+
+document.getElementById("score1").innerText=score1
+document.getElementById("score2").innerText=score2
+},4000)
+
+</script>
+
+</body>
+</html>
