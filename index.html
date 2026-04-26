@@ -4,339 +4,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misfits Softball</title>
+    <title>Misfits Softball - Home</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
+            background-color: #f0f8ff; /* Light blue */
             color: #333;
+            line-height: 1.6;
         }
         header {
-            background-color: #87CEEB; /* Light blue */
-            color: white;
+            background-color: #ffffff; /* White */
+            color: #007bff; /* Bold blue for contrast */
             padding: 20px 0;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-bottom: 5px solid #007bff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
             text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         nav {
-            background-color: white;
-            padding: 10px 0;
+            background-color: #007bff; /* Bold blue */
+            padding: 15px 0;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         nav a {
-            margin: 0 15px;
+            color: #ffffff; /* White links */
             text-decoration: none;
-            color: #87CEEB;
+            margin: 0 20px;
+            font-size: 1.2em;
             font-weight: bold;
-            font-size: 1.1em;
-            transition: color 0.3s ease;
+            text-transform: uppercase;
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
+            display: inline-block;
+            padding: 5px 0;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background-color: #f0f8ff; /* Light blue underline */
+            transition: width 0.3s ease, left 0.3s ease;
         }
         nav a:hover {
-            color: #007bff;
+            color: #f0f8ff; /* Light blue on hover */
+            transform: translateY(-3px);
+        }
+        nav a:hover::after {
+            width: 100%;
+            left: 0;
         }
         .container {
-            width: 80%;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
         }
-        section {
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #007bff 0%, #f0f8ff 100%); /* Gradient */
+            color: #ffffff;
+            border-radius: 10px;
             margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
         }
-        section:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
+        .hero-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
-        h2 {
-            color: #87CEEB;
+        .hero-section p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+        .content-section {
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .content-section h3 {
+            color: #007bff;
             font-size: 1.8em;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #87CEEB;
-            padding-bottom: 5px;
-            display: inline-block;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #e0f7fa; /* Lighter blue */
-            color: #333;
-            font-weight: bold;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-        .gallery img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-        .map-container {
-            margin-top: 15px;
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #ccc; /* Placeholder background */
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .map-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            margin-top: 0;
+            border-bottom: 2px solid #f0f8ff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
         footer {
+            background-color: #333;
+            color: #ffffff;
             text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-            background-color: #87CEEB;
-            color: white;
+            padding: 20px 0;
+            margin-top: 40px;
             font-size: 0.9em;
+        }
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>Misfits Softball</h1>
+        <h1>MISFITS SOFTBALL</h1>
     </header>
-
     <nav>
-        <a href="#stats">Stats</a>
-        <a href="#leaderboards">Leaderboards</a>
-        <a href="#pictures">Pictures</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#map">Map</a>
+        <a href="stats.html">Stats</a>
+        <a href="leaderboards.html">Leaderboards</a>
+        <a href="pictures.html">Pictures</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="map.html">Map</a>
     </nav>
 
     <div class="container">
-
-        <section id="stats">
-            <h2>Team Stats</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Statistic</th>
-                        <th>Value</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Games Played</td>
-                        <td>15</td>
-                    </tr>
-                    <tr>
-                        <td>Wins</td>
-                        <td>10</td>
-                    </tr>
-                    <tr>
-                        <td>Losses</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>Win Percentage</td>
-                        <td>66.7%</td>
-                    </tr>
-                    <tr>
-                        <td>Total Runs Scored</td>
-                        <td>120</td>
-                    </tr>
-                    <tr>
-                        <td>Total Runs Allowed</td>
-                        <td>85</td>
-                    </tr>
-                </tbody>
-            </table>
+        <section class="hero-section">
+            <h2>Unleash Your Inner Misfit on the Diamond!</h2>
+            <p>Welcome to the official online home of the Misfits Softball team. Get ready for a season of high-flying action, unforgettable plays, and a whole lot of fun. Explore our site to stay updated on everything Misfits!</p>
         </section>
 
-        <section id="leaderboards">
-            <h2>Player Leaderboards</h2>
-            <h3>Batting Average</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Player Name</th>
-                        <th>AVG</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Alex Johnson</td>
-                        <td>.450</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Maria Garcia</td>
-                        <td>.420</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Sam Lee</td>
-                        <td>.400</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>Home Runs</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Player Name</th>
-                        <th>HR</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Chris Davis</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Alex Johnson</td>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Taylor Smith</td>
-                        <td>3</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>Earned Run Average (ERA)</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Player Name</th>
-                        <th>ERA</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Sarah Brown</td>
-                        <td>2.10</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>David Wilson</td>
-                        <td>2.50</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Emily Green</td>
-                        <td>3.00</td>
-                    </tr>
-                </tbody>
-            </table>
+        <section class="content-section">
+            <h3>Latest News & Updates</h3>
+            <p>Stay tuned for exciting announcements, game recaps, and team highlights. We're gearing up for an epic season and can't wait to share it with you!</p>
+            <p>Check out the <a href="schedule.html">schedule</a> to find out when our next game is and come cheer us on!</p>
         </section>
 
-        <section id="pictures">
-            <h2>Team Pictures</h2>
-            <div class="gallery">
-                <img src="placeholder_image_1.jpg" alt="Team celebrating a win">
-                <img src="placeholder_image_2.jpg" alt="Players during a game">
-                <img src="placeholder_image_3.jpg" alt="Team huddle">
-                <img src="placeholder_image_4.jpg" alt="Group photo">
-                <img src="placeholder_image_5.jpg" alt="Action shot">
-                <img src="placeholder_image_6.jpg" alt="Post-game fun">
-            </div>
+        <section class="content-section">
+            <h3>Why Misfits?</h3>
+            <p>We're more than just a team; we're a family that brings passion, grit, and a whole lot of heart to every game. Our light blue and white colors represent our fresh approach and unwavering spirit.</p>
         </section>
-
-        <section id="schedule">
-            <h2>Upcoming Schedule</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Opponent</th>
-                        <th>Location</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>July 20, 2024</td>
-                        <td>7:00 PM</td>
-                        <td>The Sluggers</td>
-                        <td>Central Park Field 3</td>
-                    </tr>
-                    <tr>
-                        <td>July 27, 2024</td>
-                        <td>6:30 PM</td>
-                        <td>The Hitmen</td>
-                        <td>Riverside Diamond</td>
-                    </tr>
-                    <tr>
-                        <td>August 3, 2024</td>
-                        <td>7:30 PM</td>
-                        <td>The Bombers</td>
-                        <td>Central Park Field 3</td>
-                    </tr>
-                    <tr>
-                        <td>August 10, 2024</td>
-                        <td>6:00 PM</td>
-                        <td>The Aces</td>
-                        <td>Downtown Stadium</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section id="map">
-            <h2>Our Home Field</h2>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.865989735553!2d-73.98566499999999!3d40.748817099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2590359660463%3A0x3b8377c1a3381635!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1625362828000!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            <p style="text-align: center; margin-top: 10px;">Central Park Field 3 - 123 Main Street, Anytown, USA</p>
-        </section>
-
     </div>
 
     <footer>
-        &copy; 2024 Misfits Softball. All rights reserved.
+        <p>&copy; 2023 Misfits Softball. All rights reserved.</p>
     </footer>
-
 </body>
 </html>
 ```
