@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pictures</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background-color: #fff3cd;
+            color: #333;
+        }
+        h1 {
+            color: #ffc107;
+            text-align: center;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        nav a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #6c757d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/250x200/FF5733/FFFFFF?text=Image+1" alt="Placeholder Image 1">
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/250x200/33FF57/FFFFFF?text=Image+2" alt="Placeholder Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/250x200/3357FF/FFFFFF?text=Image+3" alt="Placeholder Image 3">
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/250x200/FF33A1/FFFFFF?text=Image+4" alt="Placeholder Image 4">
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/250x200/A133FF/FFFFFF?text=Image+5" alt="Placeholder Image 5">
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/250x200/33FFA1/FFFFFF?text=Image+6" alt="Placeholder Image 6">
+        </div>
+    </div>
+    <nav style="text-align: center;">
+        <a href="index.html">Back to Main Page</a>
+    </nav>
+</body>
+</html>
