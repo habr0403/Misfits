@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background-color: #d4edda;
+            color: #333;
+        }
+        h1 {
+            color: #28a745;
+            text-align: center;
+        }
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .leaderboard-table th, .leaderboard-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .leaderboard-table th {
+            background-color: #343a40;
+            color: white;
+            font-weight: bold;
+        }
+        .leaderboard-table tbody tr:nth-child(even) {
+            background-color: #e9ecef;
+        }
+        .leaderboard-table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+        nav a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #6c757d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <h1>Top Performers</h1>
+    <table class="leaderboard-table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Username</th>
+                <th>Score</th>
+                <th>Last Active</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>GamerPro123</td>
+                <td>9850</td>
+                <td>2023-10-27</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>SkillMaster</td>
+                <td>9720</td>
+                <td>2023-10-26</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>ApexPredator</td>
+                <td>9600</td>
+                <td>2023-10-27</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>VictoryRoyale</td>
+                <td>9550</td>
+                <td>2023-10-25</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>EliteWarrior</td>
+                <td>9480</td>
+                <td>2023-10-27</td>
+            </tr>
+        </tbody>
+    </table>
+    <nav style="text-align: center;">
+        <a href="index.html">Back to Main Page</a>
+    </nav>
+</body>
+</html>
